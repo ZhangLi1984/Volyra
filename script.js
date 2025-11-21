@@ -799,6 +799,63 @@ window.addEventListener('load', () => {
 });
 
 // ===================================
+// Product Navigation Dropdown - Smooth Scroll
+// ===================================
+
+document.querySelectorAll('.products-dropdown-menu a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href.startsWith('#') && href !== '#products') {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const navHeight = document.querySelector('nav').offsetHeight;
+                const targetPosition = targetElement.offsetTop - navHeight - 20;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});
+
+// ===================================
+// Image Error Handling - Hide 404 Images
+// ===================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const appImages = document.querySelectorAll('.app-image');
+    
+    appImages.forEach(img => {
+        // Handle images that fail to load
+        img.addEventListener('error', function() {
+            console.warn('Failed to load image:', this.src);
+            this.classList.add('image-error');
+            
+            // If it's a screenshot in a grid, adjust the grid layout
+            const parent = this.parentElement;
+            if (parent && parent.classList.contains('grid')) {
+                // Check if all images in the grid failed
+                const gridImages = parent.querySelectorAll('.app-image');
+                const failedImages = parent.querySelectorAll('.app-image.image-error');
+                
+                if (gridImages.length === failedImages.length) {
+                    // All images failed, hide the entire grid
+                    parent.style.display = 'none';
+                }
+            }
+        });
+        
+        // Handle successful image loads
+        img.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+    });
+});
+
+// ===================================
 // Console Welcome Message
 // ===================================
 
@@ -816,7 +873,7 @@ const getCurrentTheme = () => {
 const currentTheme = getCurrentTheme();
 
 console.log(
-    '%cWelcome to TechVision Solutions! 🚀',
+    '%cWelcome to Nexora Studios! 🚀',
     `font-size: 20px; font-weight: bold; color: ${currentTheme.primary};`
 );
 console.log(

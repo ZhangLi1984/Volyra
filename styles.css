@@ -14,6 +14,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    background: linear-gradient(135deg, #e8f0f7 0%, #dce8f3 100%);
+    min-height: 100vh;
 }
 
 /* Custom Scrollbar - Minimal Apple Style */
@@ -47,6 +49,8 @@ html {
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .apple-nav-link {
@@ -67,6 +71,23 @@ html {
 
 .apple-nav-link:hover::after {
     width: 100%;
+}
+
+/* Products Dropdown */
+.products-dropdown:hover .products-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.products-dropdown-menu {
+    z-index: 100;
+}
+
+.products-dropdown button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .apple-button {
@@ -153,17 +174,19 @@ html {
    =================================== */
 
 .apple-service-card {
-    background: white;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     padding: 40px;
     border-radius: 24px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .apple-service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 113, 227, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 113, 227, 0.3);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
 }
 
 .apple-product-feature {
@@ -192,27 +215,31 @@ html {
 .apple-stat-card {
     text-align: center;
     padding: 32px;
-    background: white;
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
     border-radius: 16px;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .apple-stat-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
 }
 
 .apple-value-card {
     padding: 32px;
-    background: white;
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
     border-radius: 20px;
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .apple-value-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
 }
 
 .apple-team-card {
@@ -233,15 +260,17 @@ html {
 
 .apple-tech-card {
     padding: 40px 32px;
-    background: white;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fb 100%);
     border-radius: 24px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .apple-tech-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
 }
 
 /* ===================================
@@ -522,4 +551,16 @@ button:focus-visible {
 
 .transition-smooth {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===================================
+   Image Error Handling
+   =================================== */
+
+.app-image.image-error {
+    display: none !important;
+}
+
+.app-image {
+    transition: opacity 0.3s ease;
 }

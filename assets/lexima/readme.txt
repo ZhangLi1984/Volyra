@@ -1,0 +1,3 @@
+Lexima
+Welcome to Lexima a world where language is your weapon and empathy is your shield. Step into the role of a Dream Weaver an agent who dives into the subconscious of others to confront and heal their nightmares. Journey through surreal dreamscapes and face manifestations of trauma in tactical verbal combat. Wield a lexicon of emotion words like Hope and Courage. Discover new powers by synthesizing these words into powerful concepts to turn the tide against the darkness. Unravel a profound story not just about your clients but about your own forgotten past. The mind is a labyrinth. Become its light.
+
